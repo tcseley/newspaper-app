@@ -3,6 +3,18 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
+    <br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Newspaper app</h1>
+        <p class="lead">A Django-built newspaper website</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">View all articles</a>
+        </p>
+    </div>
+
+
+
+
 {% if user.is_authenticated %}
     Hi {{ user.username }}! You are {{ user.age }} years old.
     <p><a href="{% url 'logout' %}">Logout</a></p>
