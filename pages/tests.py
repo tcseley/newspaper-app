@@ -1,6 +1,6 @@
 
 from django.test import TestCase, SimpleTestCase
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model  # Referencing the custom User model
 from django.urls import reverse
 
 
