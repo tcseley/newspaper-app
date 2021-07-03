@@ -7,12 +7,12 @@ from django.contrib.auth import get_user_model
 from .models import Article
 # Create your views here.
 
-author = get_user_model()
+
 
 class ArticleListView(LoginRequiredMixin, ListView):
     model = Article
     template_name = 'article_list.html'
-
+    
 
 class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
@@ -42,7 +42,7 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
-    fields = ('title', 'body',)
+    fields = ('title', 'body', 'author',)
     # login_url = '/login/'
     # redirect_field_name = 'redirect_to'
     
