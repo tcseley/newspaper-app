@@ -9,10 +9,10 @@ form = "*"
 django-crispy-forms = "*"
 environs = {extras = ["django"], version = "*"}
 gunicorn = "*"
-django-heroku = "*"
 psycopg2-binary = "*"
 whitenoise = "*"
 psycopg2 = "*"
+django-heroku = "*"
 
 [dev-packages]
 

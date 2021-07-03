@@ -9,14 +9,16 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
-import os
-import django_heroku
-from pathlib import Path
 from environs import Env
-
 env = Env()
 env.read_env()
+
+#import os
+
+#import django-heroku
+
+from pathlib import Path
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-5en$@s_%5^qq5dt!gna0^cw)p+5iam7_%qzuu=u07k@2%@j17m'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production!exit
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -138,4 +141,4 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 
-django_heroku.settings(locals()) 
+#django-heroku.settings(locals()) 
