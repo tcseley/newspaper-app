@@ -42,7 +42,7 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
-    fields = ('title', 'body', 'author')
+    fields = ('title', 'body','author')
     # login_url = '/login/'
     # redirect_field_name = 'redirect_to'
     

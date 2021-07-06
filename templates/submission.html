@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Submissions{% endblock title %}
+
+{% block content %}
+<br/>
+<div class="jumbotron">
+    <h1 class="display-4">Submission Guildelines for Hot Garbage</h1>
+    <p class="lead">Guide for decomposing with the rest of us</p>
+    <p>This short guide should give you no more clearity than you had before. The level of autonomy is wide, and you are expected to take yourself not-so-seriously, yet at least attempt to put your best foot forward. If your article is deemed by the editor-at-large to be inappropriate it will get the axe and be removed from the site. We don't tolerate racial offensivness, sexism, discrimination of any type.</p>
+
+    <p>If your work has a sense of humor, please submit an article. We tend to keep topics open, but use your best judgement. If you write tin cans and sent them to the landfill, they'd probably stay there for a long, long time. If you write paper straws then you can watch them become part of the environment again. Decompose in a nice way.</p>
+    <p class="lead">
+    <a class="btn btn-primary btn-sm" href="{% url 'home' %}"
+    role="button">Return to Home page</a>
+    </p>
+</div>
+{% endblock content %}

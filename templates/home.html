@@ -5,11 +5,22 @@
 {% block content %}
 <br/>
 <div class="jumbotron">
-<h1 class="display-4">The Texas Sun</h1>
-<p class="lead">A Community Newspaper.</p>
+<h1 class="display-4">Hot Garbage</h1>
+<p class="lead">Get it? ...while it's hot</p>
+<p>Come let your reportage decompose with us.</p>
 <p class="lead">
 <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
 role="button">View All Articles</a>
+</p>
+</div>
+
+<br/>
+<div class="jumbotron">
+<h1 class="display-4">Weather</h1>
+<p class="lead">Justify what you already know</p>
+<p class="lead">
+<a class="btn btn-primary btn-lg" href="{% url 'weather' %}"
+role="button">Check the Weather</a>
 </p>
 </div>
 {% endblock content %}
