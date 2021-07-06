@@ -18,7 +18,21 @@
             <a href="{% url 'article_delete' article.pk %}">Delete</a>
         </div>
     </div>
-    <br />
-{% endfor %}
+    <br />   
+    {% endfor %}
+    
+    <div class="container">
+        {% for description, news, image in news_list %}
+        <div class="card border-primary mb-3">
+            <img src="{{ img }}" alt="image">
+        </div>
+        <div class="card border-primary mb-3">
+            <h4><span class="badge badge-primary">Headline</span></h4>
+            <h5>{{ news }}{{ value|linebreaks }}</h5>
+            <h4><span class="badge badge-success">Description</span></h4>
+            <h5>{{ description }}{{ value|linebreaks }}</h5>
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock content %}
