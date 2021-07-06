@@ -16,24 +16,22 @@ class ArticleListView(LoginRequiredMixin, ListView):
     model = Article
     template_name = 'article_list.html'
 
-
-    def ArticleListView(request):
-        newsApi = NewsApiClient(api_key='b8345b8ecad948eb840e8cf2b60da147')
-        headLines = newsApi.get_top_headlines(sources='vice-news')
-        print(headLines)
-        articles = headLines['articles']
+    def headlineNews(request):
+        newsapi = NewsApiClient(api_key='b8345b8ecad948eb840e8cf2b60da147')
+        top_headlines = newsapi.get_top_headlines(sources='bbc-news,the-verge')
+        articles = top_headlines['articles']
         description = []
         news = []
         image = []
 
         for i in range(len(articles)):
-            article = article[i]
+            article = articles[i]
             description.append(article['description'])
             news.append(article['title'])
-            description.append(article['urlToImage'])
-        news_list = zip(description, news, image)
+            image.append(article['urlToImage'])
+        newslist = zip(description, news, image)
 
-        return render(request, 'article_list.html', context={'news_list': news_list})
+        return render(request, 'article_list.html', context={'newslist': newslist})
 
 
 class ArticleDetailView(LoginRequiredMixin, DetailView):
@@ -64,11 +62,11 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
-    fields = ('title', 'body','author')
+    fields = ('title', 'body')
     # login_url = '/login/'
     # redirect_field_name = 'redirect_to'
     
     # See line 183 of Django source code django/docs/topics/class-based-views/generic-editing.txt: articles is auto set to signed in user
-    def from_valid(self,form): 
-        form.instance.author = self.request.author
-        return super().form_valid(form)
+    def form_valid(self,form): 
+        form.instance.author = self.request.user
+        return super(ArticleCreateView, self).form_valid(form)
