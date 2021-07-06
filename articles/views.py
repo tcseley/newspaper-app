@@ -42,11 +42,11 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
-    fields = ('title', 'body','author')
+    fields = ('title', 'body')
     # login_url = '/login/'
     # redirect_field_name = 'redirect_to'
     
     # See line 183 of Django source code django/docs/topics/class-based-views/generic-editing.txt: articles is auto set to signed in user
-    def from_valid(self,form): 
-        form.instance.author = self.request.author
-        return super().form_valid(form)
+    def form_valid(self,form): 
+        form.instance.author = self.request.user
+        return super(ArticleCreateView, self).form_valid(form)
