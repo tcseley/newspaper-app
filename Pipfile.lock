@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "138276e9d1af2209caad1ef414ab6c73ccef1dd5614dc44f5f20809a55ea11f1"
+            "sha256": "5bd09a62eb6e1dfc0f524f2e48e8298a21315f84b7be7a66b2d636ad1d7c9b59"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -126,6 +126,22 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==3.12.1"
+        },
+        "newsapi": {
+            "hashes": [
+                "sha256:ba6eae31d66f8a804134779c4f4a984fea90ef77be20dba40c2808c75042a69a",
+                "sha256:baef702f6e29fc2736932858528d94f18b2baaef9d330018ba78369e005e1df4"
+            ],
+            "index": "pypi",
+            "version": "==0.1.1"
+        },
+        "newsapi-python": {
+            "hashes": [
+                "sha256:71857f0bb86907c699f1ef4bfb9775facd10af87766af5f2e15f0d49f1a26cbc",
+                "sha256:7308966c643a636f708583d358a2ccc481b21a10fdc6d31eb05130061afd4d77"
+            ],
+            "index": "pypi",
+            "version": "==0.2.6"
         },
         "psycopg2": {
             "hashes": [

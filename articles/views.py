@@ -4,15 +4,37 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model
 
+from django.shortcuts import render
+from newsapi import NewsApiClient
+
 from .models import Article
 # Create your views here.
 
 
 
-class ArticleListView(LoginRequiredMixin, ListView):
+class ArticleListView(ListView):
     model = Article
     template_name = 'article_list.html'
-    
+
+    def headlineNews(request):
+        print('hello')
+        newsapi = NewsApiClient(api_key='b8345b8ecad948eb840e8cf2b60da147')
+        top_headlines = newsapi.get_top_headlines(sources='bbc-news,the-verge')
+        articles = top_headlines['articles']
+        description = []
+        news = []
+        image = []
+
+        for i in range(len(articles)):
+            article = articles[i]
+            description.append(article['description'])
+            news.append(article['title'])
+            image.append(article['urlToImage'])
+            newslist = zip(description, news, image)
+        print(newslist)
+
+        return render(request, 'article_list.html', context={'newslist': newslist})
+
 
 class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
