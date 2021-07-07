@@ -12,11 +12,12 @@ from .models import Article
 
 
 
-class ArticleListView(LoginRequiredMixin, ListView):
+class ArticleListView(ListView):
     model = Article
     template_name = 'article_list.html'
 
     def headlineNews(request):
+        print('hello')
         newsapi = NewsApiClient(api_key='b8345b8ecad948eb840e8cf2b60da147')
         top_headlines = newsapi.get_top_headlines(sources='bbc-news,the-verge')
         articles = top_headlines['articles']
@@ -29,7 +30,8 @@ class ArticleListView(LoginRequiredMixin, ListView):
             description.append(article['description'])
             news.append(article['title'])
             image.append(article['urlToImage'])
-        newslist = zip(description, news, image)
+            newslist = zip(description, news, image)
+        print(newslist)
 
         return render(request, 'article_list.html', context={'newslist': newslist})
 
