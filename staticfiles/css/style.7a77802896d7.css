@@ -1,0 +1,144 @@
+body > nav.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+main {
+    margin-top: 80px;
+}
+
+nav {
+    color: #8b6741;
+}
+
+a {
+    transition: ease-in-out .1s all;
+    color: #BC6000;
+    border: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #a70a0f;
+}
+
+.btn {
+    background: #BC6000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background: #a70a0f;
+    color: #fff;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.forms {
+    margin: 40px auto;
+
+}
+
+.forms form {
+    background: #eee;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+.forms form,
+.forms form p {
+    display: flex;
+    flex-direction: column;
+}
+
+.forms form button {
+    align-self: flex-end;
+    width: 120px;
+}
+
+.forms form [id*="div_id"] input {
+    width: 100%;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    float: none;
+    right: 5px;
+    left: auto;
+}
+
+#new-article {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: #fff;
+    background-image: linear-gradient(to right top, #fe9343, #fb7d34, #f86429, #f44721, #f0151e);
+    padding: 2px 14px;
+    border-radius: 50%;
+    z-index: 100;
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, .4);
+    transition: ease-in .3s all;
+}
+
+#new-article:hover {
+    transform: rotate(360deg);
+}
+
+.message-board,
+.weather {
+    background: url("/static/images/home-image.473bfb917084.jpg") center center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.weather {
+    background: url("/static/images/weather.67b13fe28fd5.jpg") center center no-repeat; 
+}
+
+.message-board>div,
+.weather > div {
+    position: relative;
+    z-index: 2;
+}
+
+.message-board:after,
+.weather:after {
+    content: '';
+    background: #fff;
+    display: block;
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* icons */
+.fa-edit {
+    color: #0091A8;
+}
+
+.fa-edit:hover {
+    color: #015d6b;
+}
+
+.fa-trash {
+    color: #f0151e;
+    transition: ease-in-out .1s all;
+}
+
+.fa-trash:hover {
+    color: #a70a0f;
+}
