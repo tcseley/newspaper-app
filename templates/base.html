@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}"><i class="far fa-comments"></i> Community Message Board</a>
+        <a class="navbar-brand" href="{% url 'home' %}"><i class="far fa-comments"></i>Texas Connect</a>
         
         {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
@@ -37,7 +37,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
-                        <a class="dropdown-item" href="{% url 'submission' %}">Submission Requests</a>
+                        <a class="dropdown-item" href="{% url 'submission' %}">Guidelines</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
                     </div>
